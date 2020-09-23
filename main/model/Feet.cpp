@@ -1,3 +1,4 @@
+#include <typeinfo>
 #include "../model/Feet.h"
 
 Feet::Feet(double value) {
@@ -5,12 +6,17 @@ Feet::Feet(double value) {
 }
 
 bool Feet::operator== (Feet other) const {
-    return (this->value == other.value);
+    if((this->value == other.value &&
+            typeid(this->value).name() == typeid(other.value).name())) {
+                return true;
+    }
+    return false;
 }
 
 bool Feet::operator== (Feet *other) const {
     if (other == nullptr) {
         return false;
     }
-    return (this->value == other->value);
+    return (this->value == other->value &&
+             typeid(this->value).name() == typeid(other->value).name());
 }

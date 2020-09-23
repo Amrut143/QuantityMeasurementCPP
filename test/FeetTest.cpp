@@ -18,6 +18,12 @@ TEST(FeetTest, givenSameReference_WhenEqual_ShouldReturnTrue) {
     ASSERT_EQ(first_ref, second_ref);
 }
 
+TEST(FeetTest, givenSameType_WhenEqual_ShouldReturnTrue) {
+    Feet first_type(1);
+    Feet second_type(1);
+    ASSERT_TRUE(first_type == second_type);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
