@@ -18,7 +18,7 @@ TEST(LengthTest, givenSameReferenceForFeet_WhenEqual_ShouldReturnTrue) {
     ASSERT_EQ(first_ref, second_ref);
 }
 
-TEST(LengthTest, givenSameType_WhenEqual_ShouldReturnTrue) {
+TEST(LengthTest, givenSameTypeForFeet_WhenEqual_ShouldReturnTrue) {
     Length first_type(Unit::FEET, 1.0);
     Length second_type(Unit::FEET, 1.0);
     ASSERT_TRUE(first_type == second_type);
@@ -46,6 +46,13 @@ TEST(LengthTest, givenSameReferenceForInch_WhenEqual_ShouldReturnTrue) {
     Length *second_ref = first_ref;
     ASSERT_EQ(first_ref, second_ref);
 }
+
+TEST(LengthTest, givenSameTypeForInch_WhenEqual_ShouldReturnTrue) {
+    Length first_type(Unit::INCH, 1.0);
+    Length second_type(Unit::INCH, 1.0);
+    ASSERT_TRUE(first_type == second_type);
+}
+
 
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
