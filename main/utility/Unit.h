@@ -11,6 +11,7 @@ class Unit {
         static Unit INCH;
         static Unit FEET;
         static Unit YARD;
+        static Unit CM;
 
         double get_base_value(double value);
 };
