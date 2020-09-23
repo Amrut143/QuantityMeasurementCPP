@@ -10,6 +10,7 @@ class Unit {
         Unit();
         static Unit INCH;
         static Unit FEET;
+        static Unit YARD;
 
         double get_base_value(double value);
 };
