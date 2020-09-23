@@ -1,11 +1,12 @@
 #include <typeinfo>
-#include "../model/Feet.h"
+#include "../model/Length.h"
 
-Feet::Feet(double value) {
+Length::Length(Unit unit, double value) {
     this->value = value;
+    this->unit = unit;
 }
 
-bool Feet::operator== (Feet other) const {
+bool Length::operator== (Length other) const {
     if((this->value == other.value &&
             typeid(this->value).name() == typeid(other.value).name())) {
                 return true;
@@ -13,7 +14,7 @@ bool Feet::operator== (Feet other) const {
     return false;
 }
 
-bool Feet::operator== (Feet *other) const {
+bool Length::operator== (Length *other) const {
     if (other == nullptr) {
         return false;
     }
