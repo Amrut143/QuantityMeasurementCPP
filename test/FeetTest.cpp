@@ -7,6 +7,12 @@ TEST(FeetTest, given0FeetAnd0FeetWhenCompareShouldReturnTrue) {
     ASSERT_EQ(first_zero_feet, second_zero_feet);
 }
 
+TEST(FeetTest, givenOneFeetAndNullFeetShouldReturnFalse) {
+    Feet first_one_feet(1);
+    ASSERT_FALSE(first_one_feet == nullptr);
+}
+
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
