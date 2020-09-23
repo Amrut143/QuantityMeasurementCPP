@@ -184,6 +184,13 @@ TEST(QuantityMeasurementTest, given_1Gallon_And_Litre_WhenAdded_ShouldReturnResu
     ASSERT_EQ(7.56, result);
 }
 
+TEST(QuantityMeasurementTest, given_1Litre_And_1000Ml_WhenAdded_ShouldReturnResult_In_Litres) {
+    QuantityMeasurement litre_value(Unit::LITRE, 1.0);
+    QuantityMeasurement mililitre_value(Unit::ML, 1000.0);
+    double result = litre_value.add(mililitre_value);
+    ASSERT_EQ(2.0, result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
