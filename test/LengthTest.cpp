@@ -12,7 +12,7 @@ TEST(LengthTest, givenOneFeetAndNullFeet_ShouldReturnFalse) {
     ASSERT_FALSE(first_one_feet == nullptr);
 }
 
-TEST(LengthTest, givenSameReference_WhenEqual_ShouldReturnTrue) {
+TEST(LengthTest, givenSameReferenceForFeet_WhenEqual_ShouldReturnTrue) {
     Length *first_ref = new Length(Unit::FEET, 1.0);
     Length *second_ref = first_ref;
     ASSERT_EQ(first_ref, second_ref);
@@ -39,6 +39,12 @@ TEST(LengthTest, given_0Inch_And_0Inch_WhenCompare_ShouldReturnTrue) {
 TEST(LengthTest, givenOneInchAndNullInch_ShouldReturnFalse) {
     Length first_one_inch(Unit::INCH, 1.0);
     ASSERT_FALSE(first_one_inch == nullptr);
+}
+
+TEST(LengthTest, givenSameReferenceForInch_WhenEqual_ShouldReturnTrue) {
+    Length *first_ref = new Length(Unit::INCH, 1.0);
+    Length *second_ref = first_ref;
+    ASSERT_EQ(first_ref, second_ref);
 }
 
 int main(int argc, char **argv) {
