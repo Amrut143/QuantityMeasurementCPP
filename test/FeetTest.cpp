@@ -24,6 +24,12 @@ TEST(FeetTest, givenSameType_WhenEqual_ShouldReturnTrue) {
     ASSERT_TRUE(first_type == second_type);
 }
 
+TEST(FeetTest, givenDifferentFeetValue_whenCompare_ShouldReturnFalse) {
+    Feet first_feet_value(1);
+    Feet second_feet_value(2);
+    ASSERT_FALSE(first_feet_value == second_feet_value);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
