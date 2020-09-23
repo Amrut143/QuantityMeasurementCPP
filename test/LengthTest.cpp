@@ -119,6 +119,12 @@ TEST(LengthTest, given_0Cm_And_0Cm_WhenCompare_ShouldReturnTrue) {
     ASSERT_TRUE(first_cm_value.compare(second_cm_value));
 }
 
+TEST(LengthTest, given_0Cm_And_1Cm_WhenCompare_ShouldReturnFalse) {
+    Length first_cm_value(Unit::CM, 0.0);
+    Length second_cm_value(Unit::CM, 1.0);
+    ASSERT_FALSE(first_cm_value.compare(second_cm_value));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
