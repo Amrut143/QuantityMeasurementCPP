@@ -12,6 +12,12 @@ bool Length::compare(Length that) {
     return (first_value == second_value);
 }
 
+double Length::add(Length that) {
+    double first_value = unit.get_base_value(this->value);
+    double second_value = that.unit.get_base_value(that.value);
+    return (first_value + second_value);
+}
+
 
 bool Length::operator== (Length other) const {
     if((this->value == other.value &&
