@@ -191,6 +191,12 @@ TEST(QuantityMeasurementTest, given_1Litre_And_1000Ml_WhenAdded_ShouldReturnResu
     ASSERT_EQ(2.0, result);
 }
 
+TEST(QuantityMeasurementTest, given_1Kg_And_1000Gram_WhenCompare_ShouldReturnTrue) {
+    QuantityMeasurement kg_value(Unit::KG, 1.0);
+    QuantityMeasurement gram_value(Unit::GRAM, 1000.0);
+    ASSERT_TRUE(kg_value.compare(gram_value));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

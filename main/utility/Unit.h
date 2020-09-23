@@ -18,6 +18,9 @@ class Unit {
         static Unit GALLON;
         static Unit LITRE;
         static Unit ML;
+        static Unit KG;
+        static Unit GRAM;
+        static Unit TONNE;
 
         double get_base_value(double value);
 };
