@@ -144,6 +144,13 @@ TEST(LengthTest, given_2Inch_And_2Inch_WhenAdded_ShouldReturnResult_In_Inch) {
     ASSERT_EQ(4.0, result);
 }
 
+TEST(LengthTest, given_1Feet_And_2Inch_WhenAdded_ShouldReturnResult_In_Inch) {
+    Length feet_value(Unit::FEET, 1.0);
+    Length inch_value(Unit::INCH, 2.0);
+    double result = feet_value.add(inch_value);
+    ASSERT_EQ(14.0, result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
