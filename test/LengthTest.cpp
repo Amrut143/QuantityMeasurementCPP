@@ -53,52 +53,58 @@ TEST(LengthTest, givenSameTypeForInch_WhenEqual_ShouldReturnTrue) {
     ASSERT_TRUE(first_type == second_type);
 }
 
-TEST(LengthTest, givenDifferentInchValue_whenCompare_ShouldReturnFalse) {
+TEST(LengthTest, givenDifferentInchValue_WhenCompare_ShouldReturnFalse) {
     Length first_inch_value(Unit::INCH, 1.0);
     Length second_inch_value(Unit::INCH, 2.0);
     ASSERT_FALSE(first_inch_value == second_inch_value);
 }
 
-TEST(LengthTest, given_0Feet_And_0Inch_whenCompare_ShouldReturnTrue) {
+TEST(LengthTest, given_0Feet_And_0Inch_WhenCompare_ShouldReturnTrue) {
     Length feet_value(Unit::FEET, 0.0);
     Length inch_value(Unit::INCH, 0.0);
     ASSERT_TRUE(feet_value.compare(inch_value));
 }
 
-TEST(LengthTest, given_1Feet_And_1Inch_whenCompare_ShouldReturnFalse) {
+TEST(LengthTest, given_1Feet_And_1Inch_WhenCompare_ShouldReturnFalse) {
     Length feet_value(Unit::FEET, 1.0);
     Length inch_value(Unit::INCH, 1.0);
     ASSERT_FALSE(feet_value.compare(inch_value));
 }
 
-TEST(LengthTest, given_1Feet_And_12Inch_whenCompare_ShouldReturnTrue) {
+TEST(LengthTest, given_1Feet_And_12Inch_WhenCompare_ShouldReturnTrue) {
     Length feet_value(Unit::FEET, 1.0);
     Length inch_value(Unit::INCH, 12.0);
     ASSERT_TRUE(feet_value.compare(inch_value));
 }
 
-TEST(LengthTest, given_3Feet_And_1yard_whenCompare_ShouldReturnTrue) {
+TEST(LengthTest, given_3Feet_And_1yard_WhenCompare_ShouldReturnTrue) {
     Length feet_value(Unit::FEET, 3.0);
     Length yard_value(Unit::YARD, 1.0);
     ASSERT_TRUE(feet_value.compare(yard_value));
 }
 
-TEST(LengthTest, given_1Feet_And_1yard_whenCompare_ShouldReturnFalse) {
+TEST(LengthTest, given_1Feet_And_1yard_WhenCompare_ShouldReturnFalse) {
     Length feet_value(Unit::FEET, 1.0);
     Length yard_value(Unit::YARD, 1.0);
     ASSERT_FALSE(feet_value.compare(yard_value));
 }
 
-TEST(LengthTest, given_1Inch_And_1yard_whenCompare_ShouldReturnFalse) {
+TEST(LengthTest, given_1Inch_And_1yard_WhenCompare_ShouldReturnFalse) {
     Length inch_value(Unit::INCH, 1.0);
     Length yard_value(Unit::YARD, 1.0);
     ASSERT_FALSE(inch_value.compare(yard_value));
 }
 
-TEST(LengthTest, given_1Yard_And_36Inch_whenCompare_ShouldReturnTrue) {
+TEST(LengthTest, given_1Yard_And_36Inch_WhenCompare_ShouldReturnTrue) {
     Length yard_value(Unit::YARD, 1.0);
     Length inch_value(Unit::INCH, 36.0);
     ASSERT_TRUE(yard_value.compare(inch_value));
+}
+
+TEST(LengthTest, given_36Inch_And_1Yard_WhenCompare_ShouldReturnTrue) {
+    Length inch_value(Unit::INCH, 36.0);
+    Length yard_value(Unit::YARD, 1.0);
+    ASSERT_TRUE(inch_value.compare(yard_value));
 }
 
 int main(int argc, char **argv) {
