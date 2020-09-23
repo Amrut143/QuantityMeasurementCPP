@@ -59,6 +59,12 @@ TEST(LengthTest, givenDifferentInchValue_whenCompare_ShouldReturnFalse) {
     ASSERT_FALSE(first_inch_value == second_inch_value);
 }
 
+TEST(LengthTest, given0Feet_And_0Inch_whenCompare_ShouldReturnTrue) {
+    Length feet_value(Unit::FEET, 0.0);
+    Length inch_value(Unit::INCH, 0.0);
+    ASSERT_TRUE(feet_value.compare(inch_value));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

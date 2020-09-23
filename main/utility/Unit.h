@@ -10,4 +10,6 @@ class Unit {
         Unit();
         static Unit INCH;
         static Unit FEET;
+
+        double get_base_value(double value);
 };
