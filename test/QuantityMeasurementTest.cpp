@@ -171,6 +171,12 @@ TEST(QuantityMeasurementTest, given_1Gallon_And_Litre_WhenCompare_ShouldReturnTr
     ASSERT_TRUE(gallon_value.compare(litre_value));
 }
 
+TEST(QuantityMeasurementTest, given_1Litre_And_1000Ml_WhenCompare_ShouldReturnTrue) {
+    QuantityMeasurement litre_value(Unit::LITRE, 1.0);
+    QuantityMeasurement mililitre_value(Unit::ML, 1000.0);
+    ASSERT_TRUE(litre_value.compare(mililitre_value));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
