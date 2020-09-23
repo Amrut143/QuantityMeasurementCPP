@@ -197,6 +197,12 @@ TEST(QuantityMeasurementTest, given_1Kg_And_1000Gram_WhenCompare_ShouldReturnTru
     ASSERT_TRUE(kg_value.compare(gram_value));
 }
 
+TEST(QuantityMeasurementTest, given_1Tonne_And_1000Kg_WhenCompare_ShouldReturnTrue) {
+    QuantityMeasurement tonne_value(Unit::TONNE, 1.0);
+    QuantityMeasurement kg_value(Unit::KG, 1000.0);
+    ASSERT_TRUE(tonne_value.compare(kg_value));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
