@@ -216,6 +216,12 @@ TEST(QuantityMeasurementTest, given_1Tonne_And_1000Gram_WhenAdded_ShouldReturnRe
     ASSERT_EQ(1001.0, result);
 }
 
+TEST(QuantityMeasurementTest, given_100degCelAnd212Fahrenheit_WhenCompare_ShouldReturnTrue) {
+    QuantityMeasurement celsius_value(Unit::CELSIUS, 100.0);
+    QuantityMeasurement fahrenheit_value(Unit::FAHRENHEIT, 212.0);
+    ASSERT_TRUE(celsius_value.compareTemperature(fahrenheit_value));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

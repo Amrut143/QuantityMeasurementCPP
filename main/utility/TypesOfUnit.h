@@ -1,5 +1,5 @@
 #pragma once
 
 enum TypesOfUnit {
-    LENGTH, VOLUME, WEIGHT
+    LENGTH, VOLUME, WEIGHT, TEMPERATURE
 };

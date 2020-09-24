@@ -12,5 +12,6 @@ public:
     bool operator== (QuantityMeasurement) const;
     bool operator== (QuantityMeasurement*) const;
     bool compare(QuantityMeasurement);
+    bool compareTemperature(QuantityMeasurement);
     double add(QuantityMeasurement);
 };

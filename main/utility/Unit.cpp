@@ -17,7 +17,18 @@ Unit Unit::ML(0.001, VOLUME);
 Unit Unit::KG(1, WEIGHT);
 Unit Unit::GRAM(0.001, WEIGHT);
 Unit Unit::TONNE(1000, WEIGHT);
+Unit Unit::CELSIUS(1, TEMPERATURE);
+Unit Unit::FAHRENHEIT(1, TEMPERATURE);
+
 
 double Unit::get_base_value(double value) {
     return (this->base_conversion_factor * value);
+}
+
+double Unit::get_temp_base_value(double value) {
+     return value * this->base_conversion_factor + 32;
+}
+
+bool Unit::operator== (Unit other) const {
+    return ((*this) == other);
 }
